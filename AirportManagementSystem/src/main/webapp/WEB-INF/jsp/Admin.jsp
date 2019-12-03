@@ -37,7 +37,7 @@ body {
 				<center>Admin</center>
 			</h2>
 <ul class="a">
-<li><p><a href="toaddPlane">Add Planes</a>/<a href="toGetPlaneId">Update Planes</a></p></li>
+<li><p><a href="toaddPlane">Add Planes</a>/<a href="viewPlanes">View Planes</a>/<a href="toGetPlaneId">Update Planes</a></p></li>
 <br>
 <li><p><a href="AddPilots">Add Pilots</a>/<a href="UpdatePilots">Update Pilots</a></p></li>
 <br>

@@ -36,8 +36,8 @@ public class Hangar {
 	private String zipCode;
 
 	public Hangar() {
-		super();
-		// TODO Auto-generated constructor stub
+		
+		
 	}
 
 	public Hangar(int hangarId, int managerId, String managerAddressLine1, String managerAddressLine2, String city,

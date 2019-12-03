@@ -32,7 +32,7 @@ background-color: #cccccc;
 
 
 <div class="container">
-<form class="form-horizontal" role="form" method="post" action="updatePlane">
+<form class="form-horizontal" role="form" method="post" action="updatePlane" modelAttribute="planeDetails">
 <h2>
 <center>Plane Details</center>
 </h2>
@@ -42,23 +42,23 @@ background-color: #cccccc;
 <label for="planename" class="col-sm-3 control-label">Plane name
 </label>
 <div class="col-sm-9">
-<input type="text" name="planename" 
-class="form-control" autofocus>
+<input type="text" name="planeId" 
+class="form-control" autofocus value=${planeDetails.planeId}>
 </div>
 </div>
 <div class="form-group">
-<label for="ownername" class="col-sm-3 control-label">Owner name
+<label for="ownername" class="col-sm-3 control-label">Owner Id
 </label>
 <div class="col-sm-9">
-<input type="text" name="ownername" 
-class="form-control" autofocus>
+<input type="text" name="ownerId" 
+class="form-control" autofocus value=${planeDetails.ownerId}>
 </div>
 </div>
 <div class="form-group">
 <label for="ownerFirstName" class="col-sm-3 control-label">Owner FirstName</label>
 <div class="col-sm-9">
 <input type="text" name="ownerFirstName"  class="form-control"
-autofocus>
+autofocus value=${planeDetails.ownerFirstName}>
 </div>
 </div>
 
@@ -68,21 +68,21 @@ autofocus>
 </label>
 <div class="col-sm-9">
 <input type="text" name="ownerLastName" 
-class="form-control" name="emailname">
+class="form-control" name="ownerLastName" value=${planeDetails.ownerLastName}>
 </div>
 </div>
 <div class="form-group">
 <label for="ownerContactNumber" class="col-sm-3 control-label">Owner Contact Number</label>
 <div class="col-sm-9">
 <input type="text" name="ownerContactNumber" 
-class="form-control">
+class="form-control" value=${planeDetails.ownerContactNumber}>
 </div>
 </div>
 
 <div class="form-group">
 				<label for="ownerEmail" class="col-sm-3 control-label">Owner Email </label>
 				<div class="col-sm-9">
-<input type="text" name="ownerEmail"  class="form-control">
+<input type="text" name="ownerEmail"  class="form-control" value=${planeDetails.ownerEmail}>
 </div>
 </div>
 <div class="form-group">
@@ -90,7 +90,7 @@ class="form-control">
 </label>
 <div class="col-sm-9">
 <input type="text" name="planeType"
-class="form-control">
+class="form-control"  value=${planeDetails.planeType}>
 
 </div>
 </div>
@@ -99,7 +99,7 @@ class="form-control">
 <label for="altContactNumber" class="col-sm-3 control-label">Plane Capacity
 </label>
 <div class="col-sm-9">
-<input type="text" name="planeCapacity" class="form-control">
+<input type="text" name="planeCapacity" class="form-control" value=${planeDetails.planeCapacity}>
 
 </div>
 </div>

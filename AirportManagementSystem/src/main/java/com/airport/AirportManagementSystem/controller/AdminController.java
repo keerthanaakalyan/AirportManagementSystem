@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+
 
 import com.airport.AirportManagementSystem.model.Admin;
 import com.airport.AirportManagementSystem.model.Hangar;
@@ -84,7 +84,7 @@ public String addPlane(@ModelAttribute("plane")Plane plane,Model addPlaneModel )
 
 Plane newPlane = adminService.addPlane(plane);
 
-addPlaneModel.addAttribute("addedPlane", newPlane);
+addPlaneModel.addAttribute("addedPlane",newPlane);
 return "/addPlaneSuccess";
 }
 //update
@@ -120,6 +120,7 @@ public String viewPlanes(Model viewPlanesModel)
 {
 List<Plane> planes=new ArrayList<Plane>();
 planes=adminService.viewPlanes();
+
 viewPlanesModel.addAttribute("planesList",planes);
 return "/viewPlanesSuccess";
 }

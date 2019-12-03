@@ -39,18 +39,10 @@ background-color: #cccccc;
 
 
 <div class="form-group">
-<label for="planeName" class="col-sm-3 control-label">Plane NAME
+<label for="ownerId" class="col-sm-3 control-label">OwnerId
 </label>
 <div class="col-sm-9">
-<input type="text" name="planeName" placeholder="Plane NAME"
-class="form-control" autofocus>
-</div>
-</div>
-<div class="form-group">
-<label for="ownerName" class="col-sm-3 control-label">Owner NAME
-</label>
-<div class="col-sm-9">
-<input type="text" name="Id" placeholder="Owner NAME"
+<input type="text" name="ownerId" placeholder="Owner Id"
 class="form-control" autofocus>
 </div>
 </div>

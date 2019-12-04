@@ -18,6 +18,8 @@ public class Pilot {
 	private int pilotId;
 	@Column(name = "planeId", length = 10)
 	private int planeId;
+	
+
 	@NotEmpty(message="please enter the license Number")
 	@Column(name = "licenseNumber", length = 50)
 	private String licenseNumber;
@@ -35,13 +37,13 @@ public class Pilot {
 	@NotEmpty(message="zipcode cannot be empty")
 	@Column(name = "zipCode", length = 10)
 	private String zipCode;
-	@NotEmpty(message="ssn cannot be empty")
+	
 	@Column(name = "ssn", length = 50)
 	private int ssn;
 
 	public Pilot() {
 		super();
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	public Pilot(int pilotId, String licenseNumber, String addressLine1, String addressLine2, String city,
@@ -120,5 +122,11 @@ public class Pilot {
 	public void setSsn(int ssn) {
 		this.ssn = ssn;
 	}
+	public int getPlaneId() {
+		return planeId;
+	}
 
+	public void setPlaneId(int planeId) {
+		this.planeId = planeId;
+	}
 }

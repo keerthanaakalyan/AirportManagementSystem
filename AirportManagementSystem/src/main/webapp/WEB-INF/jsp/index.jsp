@@ -79,8 +79,8 @@ color: black;
  <input type="button" class="button1" value="Login" onclick="window.location.href = 'LoginAdmin';">
  <input type="button" class="button2" value="Register" onclick="window.location.href = 'toRegisterAdmin';">
   <div class="centered2">MANAGER</div>
-  <input type="button" class="button3" value="Login">
- <input type="button" class="button4" value="Register">
+  <input type="button" class="button3" value="Login" onclick="window.location.href = 'toLoginManager';">
+ <input type="button" class="button4" value="Register" onclick="window.location.href = 'toRegisterManager';">
  </div>
 </body>
 </html>

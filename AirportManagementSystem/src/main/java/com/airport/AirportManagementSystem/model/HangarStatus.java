@@ -36,7 +36,7 @@ public class HangarStatus {
 
 	public HangarStatus() {
 		super();
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	public HangarStatus(int hangarId, int managerId, String status, String occupancyFromDate, String occupancyTillDate,

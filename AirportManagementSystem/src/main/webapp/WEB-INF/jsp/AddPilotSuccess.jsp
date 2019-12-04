@@ -22,19 +22,12 @@ body {
        
         <p style="font-size:20px;color:#5C5C5C;">Your details are submitted successfully.</p>
        
-        <a href="" class="btn btn-success" onclick="window.location.href = 'LoginAdmin';">     Log in      </a>
+       <!--  <a href="" class="btn btn-success" onclick="window.location.href = 'LoginAdmin';">     Log in      </a> -->
     <br><br>
         </div>
         
 	</div>
 
-<%-- Physician Name: ${addedPlan.firstName}
-${addedPlan.lastName}<br>
-Department: ${addedPlan.departmentName}<br>
-Educational Qualification: ${addedPlan.educationalQualification}<br>
-Y.O.P: ${addedPlan.yearsOfExperience}<br>
-State: $addedPlan.state}<br>
-Insurance Plan: ${addedPlan.insurancePlan}<br> --%>
 </div>
 </body>
 </html>

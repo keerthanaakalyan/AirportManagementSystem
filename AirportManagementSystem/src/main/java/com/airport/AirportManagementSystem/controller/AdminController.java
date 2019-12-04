@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -85,33 +86,42 @@ public String addPlane(@ModelAttribute("plane")Plane plane,Model addPlaneModel )
 Plane newPlane = adminService.addPlane(plane);
 
 addPlaneModel.addAttribute("addedPlane",newPlane);
-return "/addPlaneSuccess";
+return "addPlaneSuccess";
 }
 //update
 //to get plane id from jsp page to update
 @RequestMapping("/toGetPlaneId")
 public String getPlaneId2()
 {
-return "/getPlaneId";
+return "getPlaneId";
 }
 //to display the details of plane for given plane id(update)
-@RequestMapping(value="/getDetailsOfPlane",method=RequestMethod.POST)
-public String getDetailsByPlaneId(@RequestParam("planeId") int planeId,Model model)
+@RequestMapping(value="/getDetailsOfPlane/{planeId}",method=RequestMethod.GET)
+public String getDetailsByPlaneId(@PathVariable("planeId") int planeId,Model model)
 {
 
 Plane plane=adminService.getPlaneDetailsByPlaneId(planeId);
 model.addAttribute("planeDetails",plane);
-return "/updatePlaneForm";
+return "updatePlaneForm";
 }
+@RequestMapping(value="/getDetails",method=RequestMethod.GET)
+public String getDetails(@RequestParam("planeId") int planeId,Model model)
+{
+
+Plane plane=adminService.getPlaneDetailsByPlaneId(planeId);
+model.addAttribute("planeDetails",plane);
+return "updatePlaneForm";
+}
+
 
 //to update plane details and redirect to success page
 @RequestMapping(value="/updatePlane",method=RequestMethod.POST)
-public String updatPlane(@ModelAttribute("planeDetails")Plane plane,Model updatePlaneModel )
+public String updatePlane(@ModelAttribute("planeDetails")Plane plane,Model updatePlaneModel )
 {
 
 Plane newPlane=adminService.updatePlane(plane);
 updatePlaneModel.addAttribute("updatedPlane", newPlane);
-return "/updatePlaneSuccess";
+return "updatePlaneSuccess";
 }
 //view all
 //to view list of planes
@@ -122,19 +132,207 @@ List<Plane> planes=new ArrayList<Plane>();
 planes=adminService.viewPlanes();
 
 viewPlanesModel.addAttribute("planesList",planes);
-return "/viewPlanesSuccess";
+return "viewPlanesSuccess";
 }
-/*//manager
-  //view all
-   //to view the list of managers
-@RequestMapping("/viewManagers")
-public String viewManagers(Model viewManagersModel)
+//to delete plane details and redirect to success page
+@RequestMapping(value="/deletePlane/{planeId}",method=RequestMethod.GET)
+public String deletePlane(@PathVariable("planeId") int planeId,Model deletePlaneModel)
 {
-List<Manager> managers=new ArrayList<Manager>();
-managers=adminService.viewManagers();
-viewManagersModel.addAttribute("managersList",managers);
-return "/viewManagersSuccess";
+	
+Plane newPilot=adminService.getPlaneDetailsByPlaneId(planeId);
+
+deletePlaneModel.addAttribute("deletedPlane", newPilot);
+return "deletePlane";
 }
+@RequestMapping(value="/delete",method=RequestMethod.POST)
+public String deletingPlane(@ModelAttribute("plane")Plane plane,Model deletePlaneModel )
+{
+	
+	Plane newPlane=adminService.deletePlane(plane.getPlaneId());
+	
+	deletePlaneModel.addAttribute("deletedPlane", newPlane);
+	return "deletePlaneSuccess";
+}
+
+//add pilot
+@RequestMapping("/toaddPilot")
+public String getPilot(Model model)
+{
+	model.addAttribute("pilot",new Pilot());
+	return "AddPilot";
+}
+//to add pilot details and redirect to success page
+		@RequestMapping(value="/addPilot",method=RequestMethod.POST)
+		public String addPilot(@ModelAttribute("pilot")Pilot pilot,Model addPilotModel)
+		{
+			
+		  Pilot newPilot = adminService.addPilot(pilot);
+		  addPilotModel.addAttribute("addedPilot", newPilot);
+			return "AddPilotSuccess";
+		}
+		//to get pilot id from jsp page to update
+		@RequestMapping("/toGetPilotId")
+	    public String getPilotId()
+	    {
+			return "getPilotId";
+	    }
+		
+	//to display the details of pilot for given pilot id(update)
+	@RequestMapping(value="/getDetailsOfPilot",method=RequestMethod.POST)
+	public String getDetailsByPilotId(@RequestParam("pilotId") int pilotId,Model model)
+		{
+				    
+		  Pilot pilot=adminService.getPilotDetailsByPilotId(pilotId);
+		  model.addAttribute("pilot",pilot);
+		  return "UpdatePilot";
+	    }
+				
+	//to display the details of pilot for given pilot id(update)
+		@RequestMapping(value="/getDetailsOfPilot/{pilotId}",method=RequestMethod.GET)
+		public String getDetailsByPilotIdByParam(@PathVariable("pilotId") int pilotId,Model model)
+			{
+					    
+			  Pilot pilot=adminService.getPilotDetailsByPilotId(pilotId);
+			  model.addAttribute("pilot",pilot);
+			  return "UpdatePilot";
+		    }
+		@RequestMapping(value="/deleteDetailsOfPilot/{pilotId}",method=RequestMethod.GET)
+		public String getDetailsByPilotIdByParamtoDelete(@PathVariable("pilotId") int pilotId,Model model)
+			{
+					    
+			  Pilot pilot=adminService.getPilotDetailsByPilotId(pilotId);
+			  model.addAttribute("pilot",pilot);
+			  return "deletePilot";
+		    }
+				//to update manager details and redirect to success page
+				@RequestMapping(value="/updatePilot",method=RequestMethod.POST)
+				public String updatePilot(@ModelAttribute("pilot")Pilot pilot,Model updatePilotModel )
+				{
+					
+					Pilot newPilot=adminService.updatePilot(pilot);
+					
+					updatePilotModel.addAttribute("updatedPilot", newPilot);
+					return "updatePilotSuccess";
+				}
+				
+				  //view all
+				//to view list of pilots
+				@RequestMapping("/viewPilots")
+				public String viewPilots(Model viewPilotsModel)
+				{
+				List<Pilot> pilots=new ArrayList<Pilot>();
+				pilots=adminService.viewPilots();
+				viewPilotsModel.addAttribute("pilotsList",pilots);
+				return "/viewPilotsSuccess";
+				}
+				//to get pilot id from jsp page to update
+				@RequestMapping("/planeId")
+			    public String getPlaneId()
+			    {
+					return "getPlane";
+			    }
+				@RequestMapping(value="/getplaneDetails",method=RequestMethod.GET)
+				public String getPilotDetailsByPlaneId(@RequestParam("planeId") int planeId,Model model)
+				{
+				  Pilot pilot=adminService.getPilotDetailsByPlaneId(planeId);
+				  model.addAttribute("pilotDetails",pilot);
+				return "/viewPilotByPlaneId";
+				}
+				//manager
+				  //view all
+				   //to view the list of managers
+				@RequestMapping("/viewManagers")
+				public String viewManagers(Model viewManagersModel)
+				{
+				List<Manager> managers=new ArrayList<Manager>();
+				managers=adminService.viewManagers();
+				viewManagersModel.addAttribute("managersList",managers);
+				return "/viewManagersSuccess";
+				}
+				@RequestMapping("/toaddHangar") 
+				   public String addHangar(Model model)
+				   {
+				       model.addAttribute("hangar",new Hangar());
+				       return "/addHangars";
+				   }
+
+				//to add plane details and redirect to success page
+				@RequestMapping(value="/addHangars",method=RequestMethod.POST)
+				public String addHangar(@Valid@ModelAttribute("hangar")Hangar hangar, Model addHangarModel )
+				{
+
+				 Hangar newHangar = adminService.addHangar(hangar);
+				
+				 addHangarModel.addAttribute("addedHangar", newHangar);
+				return "/addHangarSuccess";
+				}
+				//view all
+				//to view list of planes
+				@RequestMapping("/viewHangars")
+				public String viewHangars(Model viewHangarsModel)
+				{
+				List<Hangar> hangars=new ArrayList<Hangar>();
+				hangars=adminService.viewHangars();
+				viewHangarsModel.addAttribute("hangarsList",hangars);
+				return "/viewHangarsSuccess";
+				}
+
+
+
+
+				//update
+				//to get hangar id from jsp page to update
+				@RequestMapping("/toGetHangarPlaneId")
+				public String getHangarId()
+				{
+				return "getHangarId";
+				}
+				//to display the details of hangar for given hangar id(update)
+				@RequestMapping(value="/getDetailsOfHangar/{hangarId}",method=RequestMethod.GET)
+				public String getDetailsByHangarId(@PathVariable("hangarId") int hangarId,Model model)
+				{
+
+				Hangar hangar=adminService.getHangarDetailsByHangarId(hangarId);
+				model.addAttribute("hangarDetails",hangar);
+				return "updateHangarForm";
+				}
+				@RequestMapping(value="/getDetails2",method=RequestMethod.GET)
+				public String getDetails2(@RequestParam("hangarId") int hangarId,Model model)
+				{
+
+				Hangar hangar=adminService.getHangarDetailsByHangarId(hangarId);
+				model.addAttribute("planeDetails",hangar);
+				return "updateHangarForm";
+				}
+
+				//to update plane details and redirect to success page
+				@RequestMapping(value="/updateHangar",method=RequestMethod.POST)
+				public String updateHangar(@ModelAttribute("hangarDetails")Hangar hangar,Model updateHangarModel )
+				{
+
+				Hangar newHangar=adminService.updateHangar(hangar);
+				updateHangarModel.addAttribute("updatedPlane", newHangar);
+				return "updateHangarSuccess";
+				}
+
+				@RequestMapping(value="/deleteHangar/{hangarId}",method=RequestMethod.GET)
+				public String deleteHangar(@PathVariable("hangarId") int hangarId,Model deleteHangarModel)
+				{
+				Hangar newHangar=adminService.getHangarDetailsByHangarId(hangarId);
+				deleteHangarModel.addAttribute("deletedHangar", new Hangar());
+				return "deleteHangar";
+				}
+				@RequestMapping(value="/delete2",method=RequestMethod.POST)
+				public String deletingHangar(@ModelAttribute("hangar")Hangar hangar,Model deleteHangarModel )
+				{
+					
+					Hangar newHangar=adminService.deleteHangar(hangar.getHangarId());
+					
+					deleteHangarModel.addAttribute("deletedPlane", newHangar);
+					return "deletePlaneSuccess";
+				}
+
+				/*		
    //update
 //to get manager id from jsp page to update
 @RequestMapping("/toGetManagerId")
@@ -202,16 +400,7 @@ public String addPilot(@ModelAttribute("pilot")Pilot pilot,Model addPilotModel)
  addPilotModel.addAttribute("addedPilot", newPilot);
 return "/addPilotSuccess";
 }
-  //view all
-//to view list of pilots
-@RequestMapping("/viewPilots")
-public String viewPilots(Model viewPilotsModel)
-{
-List<Pilot> pilots=new ArrayList<Pilot>();
-pilots=adminService.viewPilots();
-viewPilotsModel.addAttribute("pilotsList",pilots);
-return "/viewPilotsSuccess";
-}
+
   //view pilot details by plane id
  //to get plane id from jsp page to view pilot details
 @RequestMapping("/toGetPlaneId")
@@ -254,24 +443,7 @@ Model updatePilotModel = null;
 updatePilotModel.addAttribute("updatedPilot", newPilot);
 return "/updatePilotSuccess";
 }
-  //delete
-//(call toGetPilotId)
-//to get pilot id from jsp page to delete
-@RequestMapping("/toGetPilotId")
-   public String getPilotId()
-   {
-return "/getPilotId";
-   }
-//to delete pilot details and redirect to success page
-@RequestMapping(value="/deletePilot",method=RequestMethod.POST)
-public String deletePilot(@RequestParam("pilotId") int pilotId,Model model)
-{
-
-Pilot newPilot=adminService.deletePilot(pilotId);
-Model deletePilotModel = null;
-deletePilotModel.addAttribute("deletedPilot", newPilot);
-return "/deletePilotSuccess";
-}
+ 
 
 //plane
   //add plane

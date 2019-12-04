@@ -47,7 +47,7 @@ public class Manager {
 
 	public Manager() {
 		super();
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	public Manager(int managerId, @NotEmpty(message = "firstName cannot be empty") String firstName,

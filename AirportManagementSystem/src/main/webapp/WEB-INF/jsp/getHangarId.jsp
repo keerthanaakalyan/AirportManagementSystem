@@ -32,23 +32,24 @@ body {
 
 
 	<div class="container">
-		<form class="form-horizontal" role="form" action="getDetails" modelAttribute="plane" method="GET">
+		<form class="form-horizontal" role="form" action="getDetails2" modelAttribute="hangar" method="GET">
 			<h2>
-				<center>Plane Details</center>
+				<center>Hangar Details</center>
 			</h2>
 
 
 			<div class="form-group">
-				<label for="planeId" class="col-sm-3 control-label">PLANE ID
+				<label for="hangarId" class="col-sm-3 control-label">HANGAR ID
 					</label>
 				<div class="col-sm-9">
-					<input type="text" name="planeId" placeholder="PlaneId"
+					<input type="text" name="hangarId" placeholder="HangarId"
 						class="form-control" autofocus>
 				</div>
 			</div>
-			<button type="submit" class="btn btn-primary btn-block">UPDATE PLANE DETAILS</button>
+			<button type="submit" class="btn btn-primary btn-block">UPDATE HANGAR DETAILS</button>
 		</form>
 
 	</div>
 	</body>
 	</html>
+

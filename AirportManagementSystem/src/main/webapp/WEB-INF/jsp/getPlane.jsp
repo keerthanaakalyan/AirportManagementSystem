@@ -32,7 +32,7 @@ body {
 
 
 	<div class="container">
-		<form class="form-horizontal" role="form" action="getDetails" modelAttribute="plane" method="GET">
+		<form class="form-horizontal" role="form" action="getplaneDetails" modelAttribute="plane" method="GET">
 			<h2>
 				<center>Plane Details</center>
 			</h2>
@@ -46,7 +46,7 @@ body {
 						class="form-control" autofocus>
 				</div>
 			</div>
-			<button type="submit" class="btn btn-primary btn-block">UPDATE PLANE DETAILS</button>
+			<button type="submit" class="btn btn-primary btn-block">DISPLAY PLANE DETAILS</button>
 		</form>
 
 	</div>

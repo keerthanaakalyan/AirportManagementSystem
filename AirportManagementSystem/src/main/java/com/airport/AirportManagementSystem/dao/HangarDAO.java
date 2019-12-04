@@ -14,4 +14,7 @@ public interface HangarDAO extends CrudRepository<Hangar, Integer> {
 	public List<Hangar> findAll();
 	@Query( "FROM Hangar where planeId =:planeId")
 	public Hangar findHangarDetailsByPlaneId(@Param("planeId")int planeId);
+	
+	@Query( "update Hangar set planeId =:planeId where hangarId =:hangarId")
+	public Hangar allotPlanetoHangar(@Param("planeId")int planeId, @Param("hangarId")int hangarId);
 }

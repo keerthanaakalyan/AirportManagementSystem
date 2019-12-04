@@ -49,7 +49,7 @@ class="form-control" autofocus value=${pilot.pilotId}>
 <label for="pilotId" class="col-sm-3 control-label">Plane Id
 </label>
 <div class="col-sm-9">
-<input type="text" name="planeId" 
+<input readOnly type="text" name="planeId" 
 class="form-control" autofocus value=${pilot.planeId}>
 </div>
 </div>
@@ -57,14 +57,14 @@ class="form-control" autofocus value=${pilot.planeId}>
 <label for="licenseNumber" class="col-sm-3 control-label">License Number
 </label>
 <div class="col-sm-9">
-<input type="text" name="licenseNumber" 
+<input readOnly type="text" name="licenseNumber" 
 class="form-control" autofocus value=${pilot.licenseNumber}>
 </div>
 </div>
 <div class="form-group">
 <label for="addressLine1" class="col-sm-3 control-label">Address line 1</label>
 <div class="col-sm-9">
-<input type="text" name="addressLine1"  class="form-control"
+<input readOnly type="text" name="addressLine1"  class="form-control"
 autofocus value=${pilot.addressLine1}>
 </div>
 </div>
@@ -72,7 +72,7 @@ autofocus value=${pilot.addressLine1}>
 <div class="form-group">
 <label for="addressLine2" class="col-sm-3 control-label">Address line 2</label>
 <div class="col-sm-9">
-<input type="text" name="addressLine2"  class="form-control"
+<input readOnly type="text" name="addressLine2"  class="form-control"
 autofocus value=${pilot.addressLine2}>
 </div>
 </div>
@@ -81,7 +81,7 @@ autofocus value=${pilot.addressLine2}>
 <label for="city" class="col-sm-3 control-label">City
 </label>
 <div class="col-sm-9">
-<input type="text" name="city" 
+<input readOnly type="text" name="city" 
 class="form-control" name="city" value=${pilot.city}>
 </div>
 </div>
@@ -89,7 +89,7 @@ class="form-control" name="city" value=${pilot.city}>
 <div class="form-group">
 				<label for="state" class="col-sm-3 control-label">State</label>
 				<div class="col-sm-9">
-				<select name="state" class="browser-default custom-select">
+				<select readOnly name="state" class="browser-default custom-select">
   <option selected >${pilot.state}</option>
   <option value="COIMBATORE" >COIMBATORE</option>
   <option value="KOCHI">KOCHI</option>
@@ -107,14 +107,14 @@ class="form-control" name="city" value=${pilot.city}>
 <div class="form-group">
 				<label for="zipCode" class="col-sm-3 control-label">ZipCode </label>
 				<div class="col-sm-9">
-<input type="text" name="zipCode"  class="form-control" value=${pilot.zipCode}>
+<input readOnly type="text" name="zipCode"  class="form-control" value=${pilot.zipCode}>
 </div>
 </div>
 <div class="form-group">
 <label for="ssn" class="col-sm-3 control-label">SSN
 </label>
 <div class="col-sm-9">
-<input type="text" name="ssn"
+<input readOnly type="text" name="ssn"
 class="form-control"  value=${pilot.ssn}>
 
 </div>
@@ -149,7 +149,7 @@ type="radio" name="gender">Female</label>
 <span class="help-block">*Required fields</span>
 </div>
 </div> -->
-<button type="submit" class="btn btn-primary btn-block">UPDATE  PILOT DETAILS</button>
+<button type="submit" class="btn btn-primary btn-block">DELETE  PILOT DETAILS</button>
 </form>
 
 </div>

@@ -1,6 +1,6 @@
 package com.airport.AirportManagementSystem.model;
 
-import java.io.Serializable;
+
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -49,7 +49,7 @@ public class Plane {
 
 	public Plane() {
 		super();
-		// TODO Auto-generated constructor stub
+		
 	}
 
 

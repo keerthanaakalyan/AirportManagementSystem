@@ -32,74 +32,74 @@ background-color: #cccccc;
 
 
 <div class="container">
-<form class="form-horizontal" role="form" method="post" action="/updatePlane" modelAttribute="planeDetails">
+<form class="form-horizontal" role="form" method="post" action="updateHangar" modelAttribute="hangarDetails">
 <h2>
-<center>Plane Details</center>
+<center>Hangar Details</center>
 </h2>
 
 
 <div class="form-group">
-<label for="planename" class="col-sm-3 control-label">Plane name
+<label for="hangarId" class="col-sm-3 control-label">HangarId
 </label>
 <div class="col-sm-9">
-<input type="text" name="planeId" 
-class="form-control" autofocus value=${planeDetails.planeId}>
+<input type="text" name="hangarId" 
+class="form-control" autofocus value=${hangarDetails.hangarId}>
 </div>
 </div>
 <div class="form-group">
-<label for="ownername" class="col-sm-3 control-label">Owner Id
+<label for="managerId" class="col-sm-3 control-label">ManagerId
 </label>
 <div class="col-sm-9">
-<input type="text" name="ownerId" 
-class="form-control" autofocus value=${planeDetails.ownerId}>
+<input type="text" name="managerId" 
+class="form-control" autofocus value=${hangarDetails.managerId}>
 </div>
 </div>
 <div class="form-group">
-<label for="ownerFirstName" class="col-sm-3 control-label">Owner FirstName</label>
+<label for="planeId" class="col-sm-3 control-label">planeId</label>
 <div class="col-sm-9">
-<input type="text" name="ownerFirstName"  class="form-control"
-autofocus value=${planeDetails.ownerFirstName}>
+<input type="text" name="planeId"  class="form-control"
+autofocus value=${hangarDetails.planeId}>
 </div>
 </div>
 
 
 <div class="form-group">
-<label for="ownerLastName" class="col-sm-3 control-label">Owner LastName
+<label for="managerAddressLine1" class="col-sm-3 control-label">Manager Address Line1
 </label>
 <div class="col-sm-9">
-<input type="text" name="ownerLastName" 
-class="form-control" name="ownerLastName" value=${planeDetails.ownerLastName}>
+<input type="text" name="managerAddressLine1" 
+class="form-control" autofocus value=${hangarDetails.managerAddressLine1}>
 </div>
 </div>
 <div class="form-group">
-<label for="ownerContactNumber" class="col-sm-3 control-label">Owner Contact Number</label>
+<label for="managerAddressLine2" class="col-sm-3 control-label">Manager Address Line2</label>
 <div class="col-sm-9">
-<input type="text" name="ownerContactNumber" 
-class="form-control" value=${planeDetails.ownerContactNumber}>
+<input type="text" name="managerAddressLine2" 
+class="form-control" value=${hangarDetails.managerAddressLine2}>
 </div>
 </div>
 
 <div class="form-group">
-				<label for="ownerEmail" class="col-sm-3 control-label">Owner Email </label>
+				<label for="city" class="col-sm-3 control-label">City </label>
 				<div class="col-sm-9">
-<input type="text" name="ownerEmail"  class="form-control" value=${planeDetails.ownerEmail}>
+<input type="text" name="city"  class="form-control" value=${hangarDetails.city}>
 </div>
 </div>
 <div class="form-group">
-<label for="contactNumber" class="col-sm-3 control-label">Plane Type
+<label for="state" class="col-sm-3 control-label">state
 </label>
 <div class="col-sm-9">
-<input type="text" name="planeType"
-class="form-control"  value=${planeDetails.planeType}>
+<input type="text" name="state"
+class="form-control"  value=${hangarDetails.state}>
 
 </div>
 </div>
 
 <div class="form-group">
-<label for="altContactNumber" class="col-sm-3 control-label">Plane Capacity
+<label for="zipCode" class="col-sm-3 control-label">zipCode
 </label>
 <div class="col-sm-9">
-<input type="text" name="planeCapacity" class="form-control" value=${planeDetails.planeCapacity}>
+<input type="text" name="zipCode" class="form-control" value=${hangarDetails.zipCode}>
 
 </div>
 </div>
@@ -121,18 +121,12 @@ type="radio" name="gender">Female</label>
 </label>
 </div>
 </div>
-
-
-
-
-
-
 <div class="form-group">
 <div class="col-sm-9 col-sm-offset-3">
 <span class="help-block">*Required fields</span>
 </div>
 </div> -->
-<input type="submit" class="btn btn-primary btn-block" value="UPDATE PLANE DETAILS"></input>
+<input type="submit" class="btn btn-primary btn-block" value="UPDATE HANGAR DETAILS"></input>
 
 </form>
 

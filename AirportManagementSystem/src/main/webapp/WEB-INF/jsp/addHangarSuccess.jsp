@@ -20,9 +20,9 @@ body {
         <br><br> <h2 style="color:#0fad00">Success</h2>
         
        
-        <p style="font-size:20px;color:#5C5C5C;">Your details are submitted successfully.</p>
+        <p style="font-size:20px;color:#5C5C5C;">Hangar details are Added successfully.</p>
        
-        <a href="" class="btn btn-success" onclick="window.location.href = 'LoginAdmin';">     Log in      </a>
+        <a href="" class="btn btn-success" onclick="window.location.href = 'Admin.jsp';">     HOME      </a>
     <br><br>
         </div>
         

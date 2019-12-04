@@ -82,9 +82,9 @@ img.image {
   </div>
   <center>
       <div class="container">
-        <form:form id="loginForm" class="form-horizontal" action="CheckLoginAdmin" modelAttribute="loginBean">
+        <form:form id="loginForm" class="form-horizontal" action="loginManager" modelAttribute="manager">
            <h2>
-				<center>Admin Login </center>
+				<center>Manager Login </center>
 			</h2>
             <form:label path="emailId">Username</form:label>
             <form:input type="text" path="emailId" /><br>

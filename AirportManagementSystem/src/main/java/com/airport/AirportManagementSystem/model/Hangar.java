@@ -16,6 +16,14 @@ public class Hangar {
 	@Column(name = "hangarId", length = 10)
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int hangarId;
+	public int getPlaneId() {
+		return planeId;
+	}
+
+	public void setPlaneId(int planeId) {
+		this.planeId = planeId;
+	}
+
 	@Column(name = "managerId", length = 10)
 	private int managerId;
 	@Column(name = "planeId", length = 10)

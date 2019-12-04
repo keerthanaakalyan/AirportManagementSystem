@@ -45,7 +45,7 @@ public class Admin {
 
 	public Admin() {
 		super();
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	public Admin(int adminId, String firstName, String lastName, int age, String gender, String dob,

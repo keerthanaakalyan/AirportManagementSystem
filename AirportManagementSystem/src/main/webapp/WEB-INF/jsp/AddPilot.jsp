@@ -2,7 +2,7 @@
 <html>
 <link
 	href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-	rel="stylesheet" name="bootstrap-css">
+	rel="stylesheet" id="bootstrap-css">
 <script
 	src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script
@@ -10,7 +10,7 @@
 
 <link
 	href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"
-	rel="stylesheet" name="bootstrap-css">
+	rel="stylesheet" id="bootstrap-css">
 <script
 	src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
@@ -32,17 +32,17 @@ body {
 
 
 	<div class="container">
-		<form class="form-horizontal" role="form">
+		<form class="form-horizontal" role="form" method="post" action="addPilot" modelAttribute="pilot">
 			<h2>
 				<center>Pilot Details</center>
 			</h2>
 
 
-			<div class="form-group">
-				<label for="pilotName" class="col-sm-3 control-label">Pilot NAME
+				<div class="form-group">
+				<label for="planeId" class="col-sm-3 control-label">Plane Id
 					</label>
 				<div class="col-sm-9">
-					<input type="text" name="pilotName" placeholder="Pilot NAME"
+					<input type="text" name="planeId" placeholder="Plane Id"
 						class="form-control" autofocus>
 				</div>
 			</div>
@@ -68,32 +68,23 @@ body {
 					 </label>
 				<div class="col-sm-9">
 					<input type="text" name="addressLine2" placeholder="Address Line2"
-						class="form-control" name="emailName">
+						class="form-control" name="emailname">
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="City" class="col-sm-3 control-label">City</label>
-				<div class="col-sm-9">
-				<select class="browser-default custom-select">
-  <option selected>Select City</option>
-  <option value="COIMBATORE">COIMBATORE</option>
-  <option value="KOCHI">KOCHI</option>
-  <option value="RANCHI">RANCHI</option>
-  <option value="PANAJI">PANAJI</option>
-  <option value="BANGALORE">BANGALORE</option>
-  <option value="NONAMEA">NONAMEA</option>
-  <option value="MUMBAI">MUMBAI</option>
-</select>
-				
-				</div>
-			</div>
-
+<label for="city" class="col-sm-3 control-label">City
+</label>
+<div class="col-sm-9">
+<input type="text" name="city" class="form-control">
+</div>
+</div>			
+			
 <div class="form-group">
 				<label for="state" class="col-sm-3 control-label">State</label>
 				<div class="col-sm-9">
-				<select class="browser-default custom-select">
+				<select name="state" class="browser-default custom-select">
   <option selected>Select State</option>
-  <option value="TAMILNADU">TAMILNADU</option>
+  <option value="TAMILNADU" >TAMILNADU</option>
   <option value="KERALA">KERALA</option>
   <option value="JHARKHAND">JHARKHAND</option>
   <option value="GOA">GOA</option>

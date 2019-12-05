@@ -45,7 +45,7 @@ class="form-control" autofocus>
 <label for="ownername" class="col-sm-3 control-label">Hanger Id
 </label>
 <div class="col-sm-9">
-<input type="text" name="hangerId" placeholder="Hanger Id"
+<input type="text" name="hangarId" placeholder="Hanger Id"
 class="form-control" autofocus>
 </div>
 

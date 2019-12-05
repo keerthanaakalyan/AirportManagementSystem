@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.airport.AirportManagementSystem.model.Admin;
 import com.airport.AirportManagementSystem.model.Hangar;
+import com.airport.AirportManagementSystem.model.HangarStatus;
 import com.airport.AirportManagementSystem.model.Manager;
 import com.airport.AirportManagementSystem.model.Pilot;
 import com.airport.AirportManagementSystem.model.Plane;
@@ -204,6 +205,16 @@ public String getPilot(Model model)
 			  model.addAttribute("pilot",pilot);
 			  return "deletePilot";
 		    }
+		//to update manager details and redirect to success page
+		@RequestMapping(value="/deletePilot",method=RequestMethod.POST)
+		public String deletePilot(@ModelAttribute("pilot")Pilot pilot,Model updatePilotModel )
+		{
+			
+			Pilot newPilot=adminService.deletePilot(pilot.getPilotId());
+			
+			updatePilotModel.addAttribute("updatedPilot", newPilot);
+			return "updatePilotSuccess";
+		}
 				//to update manager details and redirect to success page
 				@RequestMapping(value="/updatePilot",method=RequestMethod.POST)
 				public String updatePilot(@ModelAttribute("pilot")Pilot pilot,Model updatePilotModel )
@@ -258,13 +269,28 @@ public String getPilot(Model model)
 
 				//to add plane details and redirect to success page
 				@RequestMapping(value="/addHangars",method=RequestMethod.POST)
-				public String addHangar(@Valid@ModelAttribute("hangar")Hangar hangar, Model addHangarModel )
+				public String addingHangar(@Valid @ModelAttribute("addHangars")Hangar hangar )
 				{
 
 				 Hangar newHangar = adminService.addHangar(hangar);
 				
-				 addHangarModel.addAttribute("addedHangar", newHangar);
 				return "/addHangarSuccess";
+				}
+				@RequestMapping(value="/addHangarsstatus")
+				public String addHangarStatus(Model addHangarModel )
+				{
+
+				 
+				 addHangarModel.addAttribute("hangarstatus",new HangarStatus());
+				return "/hangarStatus";
+				}
+				@RequestMapping(value="/addingHangar",method=RequestMethod.POST)
+				public String addHangar(@Valid @ModelAttribute("hangarstatus")HangarStatus hangarStatus )
+				{
+
+				 HangarStatus newHangar = adminService.addHangarStatus(hangarStatus);
+				
+				return "/addHangarStatusSuccess";
 				}
 				//view all
 				//to view list of planes
@@ -319,7 +345,7 @@ public String getPilot(Model model)
 				public String deleteHangar(@PathVariable("hangarId") int hangarId,Model deleteHangarModel)
 				{
 				Hangar newHangar=adminService.getHangarDetailsByHangarId(hangarId);
-				deleteHangarModel.addAttribute("deletedHangar", new Hangar());
+				deleteHangarModel.addAttribute("hangarDetails", newHangar);
 				return "deleteHangar";
 				}
 				@RequestMapping(value="/delete2",method=RequestMethod.POST)
@@ -328,10 +354,34 @@ public String getPilot(Model model)
 					
 					Hangar newHangar=adminService.deleteHangar(hangar.getHangarId());
 					
-					deleteHangarModel.addAttribute("deletedPlane", newHangar);
+					deleteHangarModel.addAttribute("deletedHangar", newHangar);
 					return "deletePlaneSuccess";
 				}
+				//to delete manager details and redirect to success page
+				@RequestMapping(value="/deleteManager/{managerId}",method=RequestMethod.GET)
+				public String deleteManager(@PathVariable("managerId") int managerId,Model deleteManagerModel)
+				{
 
+				Manager newManager=adminService.deleteManager(managerId);
+				
+				//deleteManagerModel.addAttribute("deletedManager", newManager);
+				return "/deleteManagerSuccess";
+				}
+				@RequestMapping("/accept")
+				public String acceptManager()
+				{
+				return "accept";
+				}
+				
+				@RequestMapping(value="/addHangarStatus",method=RequestMethod.POST)
+				public String addHangarStatus(@ModelAttribute("status")HangarStatus hangarStatus,Model addHangarStatus)
+				{
+					
+				  HangarStatus newHangarStatus = adminService.addHangarStatus(hangarStatus);
+				  
+				  addHangarStatus.addAttribute("addedPilot", newHangarStatus);
+					return "AddPilotSuccess";
+				}
 				/*		
    //update
 //to get manager id from jsp page to update

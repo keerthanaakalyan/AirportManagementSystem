@@ -46,9 +46,10 @@ public class Pilot {
 		
 	}
 
-	public Pilot(int pilotId, String licenseNumber, String addressLine1, String addressLine2, String city,
+	public Pilot(int planeId,int pilotId, String licenseNumber, String addressLine1, String addressLine2, String city,
 			String state, String zipCode, int ssn) {
 		super();
+		this.planeId = planeId;
 		this.pilotId = pilotId;
 		this.licenseNumber = licenseNumber;
 		this.addressLine1 = addressLine1;

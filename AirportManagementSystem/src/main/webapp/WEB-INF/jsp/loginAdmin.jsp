@@ -30,7 +30,7 @@ body {
 body {font-family: Arial, Helvetica, sans-serif;}
 form {border: 3px solid #f1f1f1;}
 
-input[type=text], input[type=password] ,input[type=password] {
+input[type=text], input[type=password] ,input[type=email] {
   width: 50%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -87,7 +87,7 @@ img.image {
 				<center>Admin Login </center>
 			</h2>
             <form:label path="emailId">Username</form:label>
-            <form:input type="text" path="emailId" /><br>
+            <form:input type="email" path="emailId" /><br>
             <form:errors path="emailId" />
             <form:label path="password">password</form:label>
             <form:input type="password" path="password" /><br>

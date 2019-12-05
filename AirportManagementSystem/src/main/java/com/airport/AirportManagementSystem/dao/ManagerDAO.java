@@ -16,6 +16,7 @@ public interface ManagerDAO extends CrudRepository<Manager, Integer>{
 	public Manager findByManagerId(int managerId);
 	@Query( "FROM Manager where emailId =:username")
 	public Manager checkManagerLogin(@Param("username")String emailId);
-	
+	@Query( "select managerId FROM Manager where emailId =:username")
+	public int getManagerId(@Param("username")String username);
 	
 }

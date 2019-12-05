@@ -55,11 +55,11 @@ padding-top: 1.4rem;
             </td>
             <td>
               <span class="table-remove"><button type="button"
-                  class="btn btn-danger btn-rounded btn-sm my-0">ACCEPT</button></span>
+                  class="btn btn-danger btn-rounded btn-sm my-0" onclick="window.location.href = '/accept';">ACCEPT</button></span>
             </td>
             <td>
               <span class="table-remove"><button type="button"
-                  class="btn btn-danger btn-rounded btn-sm my-0">DECLINE</button></span>
+                  class="btn btn-danger btn-rounded btn-sm my-0" onclick="window.location.href = '/deleteManager/${user.managerId}';">DECLINE</button></span>
             </td>
           </tr>
             

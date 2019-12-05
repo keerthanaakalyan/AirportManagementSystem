@@ -47,7 +47,7 @@ div.col-sm-9 {
 
 <button onclick="goBack()">Go Back</button>
 <div class="container">
-<form class="form-horizontal" role="form" action="addHangars" modelAttribute="plane" method="POST">
+<form class="form-horizontal" role="form" action="addHangars" modelAttribute="addHangars" method="post">
 <h2>
 <center>Hangar Details</center>
 </h2>

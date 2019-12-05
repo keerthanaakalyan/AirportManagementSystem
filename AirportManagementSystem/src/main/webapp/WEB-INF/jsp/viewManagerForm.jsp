@@ -69,7 +69,7 @@ div.col-sm-9 {
 			</h2>
 <ul class="a">
 <li><p><a href="ViewPlaneStatus">View Plane Status</a>
-<li><p><a href="ViewHangarStatus">View Hangar Status</a>
+<li><p><a href="ViewHangarStatus/${Id}">View Hangar Status</a>
 <li><p><a href="HangarAllotment">Hangar Allotment</a>
 </body>
 </html>

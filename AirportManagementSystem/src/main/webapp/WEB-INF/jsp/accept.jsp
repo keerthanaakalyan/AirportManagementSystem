@@ -14,8 +14,8 @@
         <br><br> <h2 style="color:#0fad00">Success</h2>
         
        
-        <p style="font-size:20px;color:#5C5C5C;">Details are updated successfully.</p>
-       
+        <p style="font-size:20px;color:#5C5C5C;">Your details are accepted successfully.</p>
+      
     <br><br>
         </div>
         

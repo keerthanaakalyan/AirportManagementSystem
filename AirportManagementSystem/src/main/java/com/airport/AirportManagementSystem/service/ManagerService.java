@@ -12,10 +12,12 @@ import com.airport.AirportManagementSystem.model.Plane;
 public interface ManagerService{
 	
 	public List<Plane> viewPlanes();
-	public List<HangarStatus> viewHangarStatus();
-	public Plane allotHangartoPlane(int planeId,int hangarId);
-	public Hangar allotPlanetoHangar(int planeId,int hangarId);
+	public List<HangarStatus> viewHangarStatus(int managerId);
+	public int allotHangartoPlane(int planeId,int hangarId);
+	public int allotPlanetoHangar(int planeId,int hangarId);
 	public Manager addManager(Manager manager);
 	public int checkManagerLogin(String username, String password);
-
+	public int getManagerId(String username);
+	public HangarStatus hangarStatus(int hangarId);
+	public HangarStatus  updateHangar(HangarStatus hangarStatus);
 }

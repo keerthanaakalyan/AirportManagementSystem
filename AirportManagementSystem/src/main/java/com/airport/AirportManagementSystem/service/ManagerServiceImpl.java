@@ -2,6 +2,8 @@ package com.airport.AirportManagementSystem.service;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,33 +27,33 @@ public class ManagerServiceImpl implements ManagerService {
 	HangarStatusDAO hangarStatusDAO;
 	@Autowired 
 	HangarDAO hangarDAO;
-	@Override
+	@Override @Transactional
 	public List<Plane> viewPlanes() {
-		return this.planeDAO.viewAvailablePlanes();
+		return this.planeDAO.viewAvailablePlanes(0);
 	}
 
-	@Override
-	public List<HangarStatus> viewHangarStatus() {
-		return this.hangarStatusDAO.viewAvailableHangars();
+	@Override @Transactional
+	public List<HangarStatus> viewHangarStatus(int managerId) {
+		return this.hangarStatusDAO.viewAvailableHangars(managerId,"A");
 	}
 
-	@Override
-	public Plane allotHangartoPlane(int planeId, int hangarId) {
+	@Override @Transactional
+	public int allotHangartoPlane(int planeId, int hangarId) {
 		return this.planeDAO.allotHangartoPlane(planeId,hangarId);
 	}
 
-	@Override
-	public Hangar allotPlanetoHangar(int planeId, int hangarId) {
+	@Override @Transactional
+	public int allotPlanetoHangar(int planeId, int hangarId) {
 		return this.hangarDAO.allotPlanetoHangar(planeId,hangarId);
 	}
 
-	@Override
+	@Override @Transactional
 	public Manager addManager(Manager manager) {
 		return this.managerDAO.save(manager);
 		
 	}
 
-	@Override
+	@Override @Transactional
 	public int checkManagerLogin(String username, String password) {
 		Manager manager= this.managerDAO.checkManagerLogin(username);
 		if(manager!=null)
@@ -65,7 +67,24 @@ public class ManagerServiceImpl implements ManagerService {
 		
 	}
 
-	/*@Override
+	@Override @Transactional
+	public int getManagerId(String username) {
+		return this.managerDAO.getManagerId(username);
+	}
+
+	@Override @Transactional
+	public HangarStatus hangarStatus(int hangarId) {
+		return this.hangarStatusDAO.findByHangarId(hangarId);
+		
+	}
+
+	@Override @Transactional
+	public HangarStatus updateHangar(HangarStatus hangarStatus) {
+		
+		return this.hangarStatusDAO.save(hangarStatus);
+	}
+
+	/*@Override @Transactional
 	public Plane allotHangar(Plane plane, Hangar hangar) {
 		return this.planeDAO.allotHangar(plane,hangar);
 	}*/

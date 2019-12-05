@@ -32,7 +32,7 @@ background-color: #cccccc;
 
 
 <div class="container">
-<form class="form-horizontal" role="form" method="post" action="/updatePilot" modelAttribute="pilot">
+<form class="form-horizontal" role="form" method="post" action="/deletePilot" modelAttribute="pilot">
 <h2>
 <center>Pilot Details</center>
 </h2>

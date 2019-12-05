@@ -20,9 +20,9 @@ body {
         <br><br> <h2 style="color:#0fad00">Success</h2>
         
        
-        <p style="font-size:20px;color:#5C5C5C;">Hangar details are Added successfully.</p>
+        <p style="font-size:20px;color:#5C5C5C;">Hangar Status  details are Added successfully.</p>
        
-        <input type="button" class="btn btn-success" onclick="window.location.href = 'addHangarsstatus';" value="HANGER STATUS ">      
+        <a href="" class="btn btn-success" onclick="window.location.href = '/addHangarsstatus';">     HANGER STATUS      </a>
     <br><br>
         </div>
         

@@ -47,17 +47,39 @@ div.col-sm-9 {
 </head>
 <body>
 
+
+
 <div class="container">
-<form class="form-horizontal" role="form" modelAttribute="hangarStatus" action="/updateHangarStatus" method="post">
+<form class="form-horizontal" role="form" modelAttribute="hangarstatus" action="/addingHangar" method="post">
 <h2>
 <center>Hangar Status</center>
 </h2>
+
+
+<div class="form-group">
+<label for="hangarId" class="col-sm-3 control-label">Hangar ID
+*</label>
+<div class="col-sm-9">
+<input type="text" name="hangarId" placeholder="Hangar ID"
+class="form-control" autofocus>
+</div>
+</div>
+<div class="form-group">
+<label for="managerId" class="col-sm-3 control-label">ManagerID*
+</label>
+<div class="col-sm-9">
+<input type="text" name="managerId" placeholder="Manager Id"
+class="form-control" autofocus>
+</div>
+</div>
+
+
 
 <div class="form-group">
 <label for="occupancyFromDate" class="col-sm-3 control-label">Occupancy From Date
 </label>
 <div class="col-sm-9">
-<input type="date" name="occupancyFromDate" class="form-control" value="${hangarStatus.occupancyFromDate}" >
+<input type="date" name="occupancyFromDate" class="form-control" >
 </div>
 </div>
 
@@ -66,7 +88,7 @@ div.col-sm-9 {
 <label for="occupancyTillDate" class="col-sm-3 control-label">Occupancy Till Date
 </label>
 <div class="col-sm-9">
-<input type="date" name="occupancyTillDate" class="form-control" value="${hangarStatus.occupancyTillDate}">
+<input type="date" name="occupancyTillDate" class="form-control">
 </div>
 </div>
 
@@ -75,7 +97,7 @@ div.col-sm-9 {
 <label for="availableFromDate" class="col-sm-3 control-label">Available From Date
 </label>
 <div class="col-sm-9">
-<input type="date" name="availableFromDate" class="form-control" value="${hangarStatus.availableFromDate}">
+<input type="date" name="availableFromDate" class="form-control">
 </div>
 </div>
 
@@ -83,7 +105,7 @@ div.col-sm-9 {
 <label for="availableTillDate" class="col-sm-3 control-label">Available Till Date
 </label>
 <div class="col-sm-9">
-<input type="date" name="availableTillDate" class="form-control" value="${hangarStatus.availableTillDate}">
+<input type="date" name="availableTillDate" class="form-control">
 </div>
 </div>
 
@@ -93,20 +115,24 @@ div.col-sm-9 {
 <div class="row">
 <div class="col-sm-4">
 <label class="radio-inline"> <label><input
-type="radio" name="status" value="A" >Available</label>
+type="radio" name="status" value="A" checked>Available</label>
 </label>
 </div>
 <br>
 <div class="col-sm-4">
 <label class="radio-inline"> <label><input
-type="radio" name="status" value="O"  checked>Occupied</label>
+type="radio" name="status" value="O">Occupied</label>
 </label>
 </div>
 </div>
-<center>
-<button type="submit" class="btn btn-primary btn-block" style="width: 20%; height: 20%">Update Hangar Status</button>
-</center>
+
+
+
+<button type="submit" class="btn btn-primary btn-block">Submit</button>
 </form>
 
+</div>
+
+</div>
 </body>
 </html>

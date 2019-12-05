@@ -2,6 +2,7 @@ package com.airport.AirportManagementSystem.dao;
 
 import java.util.List;
 
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
@@ -18,13 +19,11 @@ public interface PlaneDAO extends CrudRepository<Plane, Integer> {
 	public List<Plane> findAll();
     
 	
-	@Query(
-			  value = "SELECT * From Planes where hangarId =0", 
-			  nativeQuery = true)
-	public List<Plane> viewAvailablePlanes();
-    
-	@Query( "update Plane set hangarId =:hangarId where planeId =:planeId")
-	public Plane allotHangartoPlane(@Param("planeId")int planeId, @Param("hangarId")int hangarId);
+	@Query( "FROM Plane where hangarId= :hangarId")
+	public List<Plane> viewAvailablePlanes(@Param("hangarId")int hangarId );
+	@Modifying
+	@Query( "update Plane set hangarId = :hangarId where planeId =:planeId")
+	public int allotHangartoPlane(@Param("planeId")int planeId, @Param("hangarId")int hangarId);
 	
 	
 	

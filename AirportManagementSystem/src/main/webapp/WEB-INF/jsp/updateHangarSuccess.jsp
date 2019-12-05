@@ -6,12 +6,6 @@
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
-<style>
-body {
-	
-	 background-color: #cccccc; 
-}
-</style>
 </head>
 <body>
 <div class="container">
@@ -20,22 +14,12 @@ body {
         <br><br> <h2 style="color:#0fad00">Success</h2>
         
        
-        <p style="font-size:20px;color:#5C5C5C;">Hangar details are Added successfully.</p>
-       
-        <input type="button" class="btn btn-success" onclick="window.location.href = 'addHangarsstatus';" value="HANGER STATUS ">      
+        <p style="font-size:20px;color:#5C5C5C;">Alloted successfully.</p>
+       <!--  <a href="" class="btn btn-success" onclick="window.location.href = 'LoginAdmin';" method="POST">     Log in      </a> -->
     <br><br>
         </div>
         
 	</div>
-
-<%-- Physician Name: ${addedPlan.firstName}
-${addedPlan.lastName}<br>
-Department: ${addedPlan.departmentName}<br>
-Educational Qualification: ${addedPlan.educationalQualification}<br>
-Y.O.P: ${addedPlan.yearsOfExperience}<br>
-State: $addedPlan.state}<br>
-Insurance Plan: ${addedPlan.insurancePlan}<br> --%>
 </div>
 </body>
 </html>
-

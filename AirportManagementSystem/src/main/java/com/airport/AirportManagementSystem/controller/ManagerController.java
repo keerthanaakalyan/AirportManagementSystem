@@ -9,12 +9,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.airport.AirportManagementSystem.dao.ManagerDAO;
 import com.airport.AirportManagementSystem.model.Admin;
 import com.airport.AirportManagementSystem.model.Hangar;
 import com.airport.AirportManagementSystem.model.HangarStatus;
@@ -54,11 +56,14 @@ public class ManagerController {
 		}
 
 		@RequestMapping("/loginManager")
-		public String login(@ModelAttribute("manager") Manager manager) {
+		public String login(@ModelAttribute("manager") Manager manager,Model m) {
 			String username = manager.getEmailId();
 			String password = manager.getPassword();
-			managerService.checkManagerLogin(username, password);
+			m.addAttribute("Id",username);
+			if(managerService.checkManagerLogin(username, password)==1)
 			return "/viewManagerForm";
+			else
+				return "failure";
 		}
 		
 
@@ -70,10 +75,12 @@ public class ManagerController {
 			return "/viewPlanes";
 		}
 		
-		@RequestMapping("/ViewHangarStatus")
-		public String viewHangarStatus(Model model) {
+		@RequestMapping("/ViewHangarStatus/{Id}")
+		public String viewHangarStatus(@PathVariable("Id")String username,Model model) {
 			List<HangarStatus> hangarStatus = new ArrayList<HangarStatus>();
-			hangarStatus= managerService.viewHangarStatus();
+			int managerId=managerService.getManagerId(username);
+			System.out.println(managerId);
+			hangarStatus= managerService.viewHangarStatus(managerId);
 			model.addAttribute("hangarStatus",hangarStatus);
 			return "/viewHangarStatus";
 		}
@@ -90,12 +97,25 @@ public class ManagerController {
 		@RequestMapping("/afterAllotHangar")
 		public String afterAllotHangaer(@RequestParam("planeId")int planeId,@RequestParam("hangarId")int hangarId,Model model)
 		{
-			Plane plane=managerService.allotHangartoPlane(planeId, hangarId);
-			Hangar hangar=managerService.allotPlanetoHangar(planeId, hangarId);
+			int plane=managerService.allotHangartoPlane(planeId, hangarId);
+			int hangar=managerService.allotPlanetoHangar(planeId, hangarId);
+			HangarStatus hangarStatus=null;
+			
+			hangarStatus=managerService.hangarStatus(hangarId);
+		    
 			model.addAttribute("plane", plane);
-			model.addAttribute("hangar", hangar);
+			model.addAttribute("hangarStatus", hangarStatus);
 			return "/afterAllotHangar";
 			
+		}
+		//to update plane details and redirect to success page
+		@RequestMapping(value="/updateHangarStatus",method=RequestMethod.POST)
+		public String updatePlane(@ModelAttribute("hangarStatus")HangarStatus hangarStatus,Model hangarStatusModel )
+		{
+
+		HangarStatus newStatus=managerService.updateHangar(hangarStatus);
+		hangarStatusModel.addAttribute("updatedHangarStatus",newStatus);
+		return "updateHangarSuccess";
 		}
 	
 }

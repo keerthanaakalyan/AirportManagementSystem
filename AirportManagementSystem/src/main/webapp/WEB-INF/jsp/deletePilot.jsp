@@ -18,12 +18,41 @@ src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 
-<!-- <style>
-body {
-background-image: url("pilot8.jpg");
-background-color: #cccccc;
+<style>
+
+ body {
+  background-image: url('flight3.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: 100% 100%;
+
+} 
+h2 {
+  font-weight: bold;
+  text-decoration: underline;
+  text-shadow: 0 0 3px black;
+  text-transform: uppercase;
 }
-</style> -->
+
+div.form-group {
+  font-size: 120%;
+text-transform: capitalize;
+}
+div.col-sm-9 {
+  font-size: 70%;
+}
+
+
+a:visited {
+  color: blue;
+}
+
+/* mouse over link */
+a:hover {
+  color: black;
+}
+</style>
+
 
 
 </head>
@@ -41,7 +70,7 @@ background-color: #cccccc;
 <label for="pilotId" class="col-sm-3 control-label">Pilot Id
 </label>
 <div class="col-sm-9">
-<input type="text" name="pilotId" 
+<input readOnly type="text" name="pilotId" 
 class="form-control" autofocus value=${pilot.pilotId}>
 </div>
 </div>
@@ -89,7 +118,7 @@ class="form-control" name="city" value=${pilot.city}>
 <div class="form-group">
 				<label for="state" class="col-sm-3 control-label">State</label>
 				<div class="col-sm-9">
-				<select readOnly name="state" class="browser-default custom-select">
+				<select contenteditable="false" name="state" class="browser-default custom-select">
   <option selected >${pilot.state}</option>
   <option value="COIMBATORE" >COIMBATORE</option>
   <option value="KOCHI">KOCHI</option>
@@ -122,34 +151,8 @@ class="form-control"  value=${pilot.ssn}>
 
 
 
-<!-- <div class="form-group">
-<label class="control-label col-sm-3">Gender</label>
-<div class="col-sm-6">
-<div class="row">
-<div class="col-sm-4">
-<label class="radio-inline"> <label><input
-type="radio" name="gender" checked>Male</label>
-</label>
-</div>
 
-<div class="col-sm-4">
-<label class="radio-inline"> <label><input
-type="radio" name="gender">Female</label>
-</label>
-</div>
-</div>
-
-
-
-
-
-
-<div class="form-group">
-<div class="col-sm-9 col-sm-offset-3">
-<span class="help-block">*Required fields</span>
-</div>
-</div> -->
-<button type="submit" class="btn btn-primary btn-block">DELETE  PILOT DETAILS</button>
+<center><button type="submit" class="btn btn-primary btn-lg">DELETE  PILOT DETAILS</button></center>
 </form>
 
 </div>

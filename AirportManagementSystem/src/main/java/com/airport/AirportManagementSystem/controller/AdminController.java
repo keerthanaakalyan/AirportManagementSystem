@@ -382,6 +382,11 @@ public String getPilot(Model model)
 				  addHangarStatus.addAttribute("addedPilot", newHangarStatus);
 					return "AddPilotSuccess";
 				}
+				@RequestMapping("/Admin")
+			    public String getAdmin()
+			    {
+					return "Admin";
+			    }
 				/*		
    //update
 //to get manager id from jsp page to update

@@ -10,10 +10,24 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 <style>
-body {
-	
-	 background-color: #cccccc; 
+ body {
+  background-image: url('flight3.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: 100% 100%;
+
+} 
+
+
+        a:visited {
+  color: blue;
 }
+
+/* mouse over link */
+a:hover {
+  color: black;
+}
+
 </style>
 </head>
 
@@ -32,7 +46,7 @@ body {
 
 
 <table border=2 align="center">
-<tr><th>PilotId</th><th>PlaneId</th><th>addressLine1</th><th>addressLine2</th><th>city</th><th>state</th><th>zipCode</th><th>ssn</th></tr>
+<tr><th>PilotId</th><th>PlaneId</th><th>addressLine1</th><th>addressLine2</th><th>city</th><th>state</th><th>zipCode</th><th>ssn</th><th>Action</th></tr>
 
 
  <c:forEach var="display" items="${pilotsList}">
@@ -51,6 +65,8 @@ body {
 </tr>
 </c:forEach> 
 </table>
+
+<a href="/Admin" target="_self">Admin Home</a>
 <%-- firstName: ${addedPlan.firstName}<br>
 lastName:${addedPlan.lastName}<br>
 ownerFirstName: ${addedPlan.ownerFirstName}<br>

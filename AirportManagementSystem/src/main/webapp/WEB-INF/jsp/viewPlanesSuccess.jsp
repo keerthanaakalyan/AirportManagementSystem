@@ -14,6 +14,15 @@ body {
 	
 	 background-color: #cccccc; 
 }
+
+        a:visited {
+  color: blue;
+}
+
+/* mouse over link */
+a:hover {
+  color: black;
+}
 </style>
 </head>
 
@@ -51,6 +60,8 @@ body {
 </tr>
 </c:forEach> 
 </table>
+
+<a href="/Admin" target="_self">Admin Home</a>
 <%-- firstName: ${addedPlan.firstName}<br>
 lastName:${addedPlan.lastName}<br>
 ownerFirstName: ${addedPlan.ownerFirstName}<br>

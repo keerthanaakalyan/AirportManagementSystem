@@ -8,6 +8,14 @@
 .pt-3-half {
 padding-top: 1.4rem;
 }
+        a:visited {
+  color: blue;
+}
+
+/* mouse over link */
+a:hover {
+  color: black;
+}
 </style>
 
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -65,6 +73,9 @@ padding-top: 1.4rem;
             
    
 </c:forEach>
+
+
+<a href="/Admin" target="_self">Admin Home</a>
 </body>
 </html>
 

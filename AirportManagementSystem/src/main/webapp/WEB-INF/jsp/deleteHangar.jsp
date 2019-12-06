@@ -17,13 +17,41 @@ src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<style>
 
-<!-- <style>
-body {
-background-image: url("plane8.jpg");
-background-color: #cccccc;
+ body {
+  background-image: url('flight3.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: 100% 100%;
+
+} 
+h2 {
+  font-weight: bold;
+  text-decoration: underline;
+  text-shadow: 0 0 3px black;
+  text-transform: uppercase;
 }
-</style> -->
+
+div.form-group {
+  font-size: 120%;
+text-transform: capitalize;
+}
+div.col-sm-9 {
+  font-size: 70%;
+}
+
+
+a:visited {
+  color: blue;
+}
+
+/* mouse over link */
+a:hover {
+  color: black;
+}
+</style>
+
 
 
 </head>
@@ -105,28 +133,8 @@ class="form-control"  value=${hangarDetails.state}>
 </div>
 
 
-<!-- <div class="form-group">
-<label class="control-label col-sm-3">Gender</label>
-<div class="col-sm-6">
-<div class="row">
-<div class="col-sm-4">
-<label class="radio-inline"> <label><input
-type="radio" name="gender" checked>Male</label>
-</label>
-</div>
 
-<div class="col-sm-4">
-<label class="radio-inline"> <label><input
-type="radio" name="gender">Female</label>
-</label>
-</div>
-</div>
-<div class="form-group">
-<div class="col-sm-9 col-sm-offset-3">
-<span class="help-block">*Required fields</span>
-</div>
-</div> -->
-<input type="submit" class="btn btn-primary btn-block" value="DELETE HANGAR DETAILS"></input>
+<center><input type="submit" class="btn btn-primary btn-lg" value="DELETE HANGAR DETAILS"></input></center>
 
 </form>
 

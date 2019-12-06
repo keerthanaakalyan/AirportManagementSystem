@@ -6,6 +6,15 @@
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<style>
+ body {
+  background-image: url('flight3.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: 100% 100%;
+
+} 
+</style>
 </head>
 <body>
 <div class="container">

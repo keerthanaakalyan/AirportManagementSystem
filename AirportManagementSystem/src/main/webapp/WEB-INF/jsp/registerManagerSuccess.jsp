@@ -15,11 +15,14 @@
         
        
         <p style="font-size:20px;color:#5C5C5C;">Your details are submitted successfully.</p>
-        <a href="" class="btn btn-success" onclick="window.location.href = 'toLoginManager';" method="POST">     Log in      </a>
+       
     <br><br>
         </div>
         
 	</div>
+</div>
+<div>
+<a href="/Admin" target="_self">Admin Home</a>
 </div>
 </body>
 </html>

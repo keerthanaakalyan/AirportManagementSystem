@@ -8,6 +8,14 @@
 .pt-3-half {
 padding-top: 1.4rem;
 }
+       a:visited {
+  color: blue;
+}
+
+/* mouse over link */
+a:hover {
+  color: black;
+}
 </style>
 <script>
 <script>
@@ -48,6 +56,8 @@ function goBack() {
    
 </c:forEach>
 
+ 
+<a href="/Admin" target="_self">Admin Home</a>
 <button onclick="goBack()">Go Back</button>
 </body>
 </html>

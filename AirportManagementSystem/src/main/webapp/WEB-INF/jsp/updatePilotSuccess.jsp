@@ -6,6 +6,16 @@
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<style type="text/css">
+        a:visited {
+  color: blue;
+}
+
+/* mouse over link */
+a:hover {
+  color: black;
+}
+</style>
 </head>
 <body>
 <div class="container">
@@ -15,6 +25,8 @@
         
        
         <p style="font-size:20px;color:#5C5C5C;">Your details are updated successfully.</p>
+
+       <a href="/Admin" target="_self">Admin Home</a>
        <!--  <a href="" class="btn btn-success" onclick="window.location.href = 'LoginAdmin';" method="POST">     Log in      </a> -->
     <br><br>
         </div>

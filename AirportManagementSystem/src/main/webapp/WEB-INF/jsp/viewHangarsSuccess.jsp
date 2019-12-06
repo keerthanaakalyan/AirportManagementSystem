@@ -14,6 +14,15 @@ body {
 	
 	 background-color: #cccccc; 
 }
+
+        a:visited {
+  color: blue;
+}
+
+/* mouse over link */
+a:hover {
+  color: black;
+}
 </style>
 </head>
 
@@ -53,6 +62,7 @@ body {
 </c:forEach> 
 </table>
 
+<a href="/Admin" target="_self">Admin Home</a>
 
 </body>
 </html>

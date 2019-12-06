@@ -10,10 +10,13 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 <style>
-body {
-	
-	 background-color: #cccccc; 
-}
+ body {
+  background-image: url('flight3.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: 100% 100%;
+
+} 
 </style>
 </head>
 
@@ -58,4 +61,10 @@ body {
  <td><a href="/getDetailsOfPilot/${display.pilotId}">Update</a>/<a href="/deleteDetailsOfPilot/${display.pilotId}">Delete</a></td>
 </tr>
 </c:forEach> --%> 
+
+
+<a href="/Admin" target="_self">Admin Home</a>
 </table>
+</div>
+</body>
+</html>

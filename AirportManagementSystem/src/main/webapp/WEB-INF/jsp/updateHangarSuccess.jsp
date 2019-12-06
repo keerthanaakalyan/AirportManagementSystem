@@ -6,6 +6,16 @@
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<style type="text/css">
+        a:visited {
+  color: blue;
+}
+
+/* mouse over link */
+a:hover {
+  color: black;
+}
+</style>
 </head>
 <body>
 <div class="container">
@@ -21,5 +31,7 @@
         
 	</div>
 </div>
+
+<a href="/Admin" target="_self">Admin Home</a>
 </body>
 </html>

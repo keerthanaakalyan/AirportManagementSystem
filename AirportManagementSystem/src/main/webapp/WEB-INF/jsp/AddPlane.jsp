@@ -18,12 +18,15 @@ src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 
-<!-- <style>
-body {
-background-image: url("plane8.jpg");
-background-color: #cccccc;
-}
-</style> -->
+ <style>
+ body {
+  background-image: url('flight3.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: 100% 100%;
+
+} 
+</style>
 
 
 </head>

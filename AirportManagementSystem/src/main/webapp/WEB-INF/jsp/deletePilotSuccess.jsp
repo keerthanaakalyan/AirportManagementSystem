@@ -6,6 +6,7 @@
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+
 <style>
 
  body {
@@ -29,7 +30,6 @@ text-transform: capitalize;
 div.col-sm-9 {
   font-size: 70%;
 }
-
 a:visited {
   color: blue;
 }
@@ -39,7 +39,6 @@ a:hover {
   color: black;
 }
 </style>
-
 </head>
 <body>
 <div class="container">
@@ -48,16 +47,12 @@ a:hover {
         <br><br> <h2 style="color:#0fad00">Success</h2>
         
        
-        <p style="font-size:20px;color:#5C5C5C;">Your details are submitted successfully.</p>
-       
-        <a href="/Admin" target="_self">Admin Home</a>
+        <p style="font-size:20px;color:#5C5C5C;">Your details are deleted successfully.</p>
+       <a href="Admin.jsp" target="_self">Admin Home</a>
     <br><br>
         </div>
         
 	</div>
-
-
 </div>
 </body>
 </html>
-

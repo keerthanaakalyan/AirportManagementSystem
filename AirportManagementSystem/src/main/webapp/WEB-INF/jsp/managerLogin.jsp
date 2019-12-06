@@ -21,10 +21,15 @@
 
 
 <style>
-body {
-	background-image: url("flight1.jpg");
-	 background-color: #cccccc; 
-}
+<style>
+ body {
+  background-image: url('flight3.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: 100% 100%;
+
+} 
+
 
 
 body {font-family: Arial, Helvetica, sans-serif;}
@@ -78,7 +83,7 @@ img.image {
     <body>
     
       <div class="imgcontainer">
-    <img src="admin4.jpg" alt="Avatar" class="image">
+    
   </div>
   <center>
       <div class="container">

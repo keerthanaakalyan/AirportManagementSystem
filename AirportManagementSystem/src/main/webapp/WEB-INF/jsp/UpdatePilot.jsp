@@ -41,7 +41,7 @@ background-color: #cccccc;
 <label for="pilotId" class="col-sm-3 control-label">Pilot Id
 </label>
 <div class="col-sm-9">
-<input type="text" name="pilotId" 
+<input readOnly type="text" name="pilotId" 
 class="form-control" autofocus value=${pilot.pilotId}>
 </div>
 </div>
@@ -49,7 +49,7 @@ class="form-control" autofocus value=${pilot.pilotId}>
 <label for="pilotId" class="col-sm-3 control-label">Plane Id
 </label>
 <div class="col-sm-9">
-<input type="text" name="planeId" 
+<input  readOnly type="text" name="planeId" 
 class="form-control" autofocus value=${pilot.planeId}>
 </div>
 </div>

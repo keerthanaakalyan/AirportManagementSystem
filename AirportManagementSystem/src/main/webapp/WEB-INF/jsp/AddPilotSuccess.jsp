@@ -7,11 +7,38 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 <style>
-body {
-	
-	 background-color: #cccccc; 
+
+ body {
+  background-image: url('flight3.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: 100% 100%;
+
+} 
+h2 {
+  font-weight: bold;
+  text-decoration: underline;
+  text-shadow: 0 0 3px black;
+  text-transform: uppercase;
+}
+
+div.form-group {
+  font-size: 120%;
+  text-transform: capitalize;
+}
+div.col-sm-9 {
+  font-size: 70%;
+}
+a:visited {
+  color: blue;
+}
+
+/* mouse over link */
+a:hover {
+  color: black;
 }
 </style>
+
 </head>
 <body>
 <div class="container">
@@ -21,8 +48,8 @@ body {
         
        
         <p style="font-size:20px;color:#5C5C5C;">Your details are submitted successfully.</p>
+       <a href="/Admin" target="_self">Admin Home</a>
        
-       <!--  <a href="" class="btn btn-success" onclick="window.location.href = 'LoginAdmin';">     Log in      </a> -->
     <br><br>
         </div>
         
